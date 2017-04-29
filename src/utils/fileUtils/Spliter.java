@@ -53,9 +53,9 @@ public class Spliter {
 		System.out.println("nuevo archivo " + sufijo);
 		InputStream is = new BufferedInputStream(new FileInputStream(inputfile.toString()));
 		byte[] c = new byte[1024];
-		int readChars = 0;
-		while ((readChars = is.read(c)) != -1) {
-			for (int i = 0; i < readChars; ++i) {
+		int chars = 0;
+		while ((chars = is.read(c)) != -1) {
+			for (int i = 0; i < chars; ++i) {
 				os.write(c[i]);
 				if (c[i] == '\n') {
 					if (numeroLineasArchivo == lineaTMP) {
