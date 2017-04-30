@@ -50,7 +50,7 @@ public class Spliter {
 		int sufijo=1;
 		OutputStream os = new BufferedOutputStream(new FileOutputStream(inputfile.getParent().toString() + "/"+ sufijo));
 		int lineaTMP = 0;
-		System.out.println("nuevo archivo " + sufijo);
+		archivos.add(inputfile.getParent().toString() + "/"+ sufijo);
 		InputStream is = new BufferedInputStream(new FileInputStream(inputfile.toString()));
 		byte[] c = new byte[1024];
 		int chars = 0;
@@ -61,7 +61,6 @@ public class Spliter {
 					if (numeroLineasArchivo == lineaTMP) {
 						os.close();
 						sufijo++;
-						System.out.println("nuevo archivo " + sufijo);
 						String nombreArchivo =inputfile.getParent().toString() + "/"+ sufijo;
 						os = new BufferedOutputStream( new BufferedOutputStream(new FileOutputStream(nombreArchivo)));
 						archivos.add(nombreArchivo);
